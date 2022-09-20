@@ -1,20 +1,18 @@
 class Vector:
-
-    values = []
-
     def __init__(self, *args):
+        self.values = []
         for arg in args:
             if isinstance(arg, int):
-                self.values = args
+                self.values.append(arg)
 
     def __str__(self):
-        if len(self.values):
-            return f'Вектор {tuple(self.values)}'
+        if self.values:
+            return f'Вектор {tuple(sorted(self.values))}'
         else:
-            return 'пустий вектор'
+            return 'Вектор пустий'
 
 
-v1 = Vector(1, 2, 3)
+v1 = Vector(1, 'hj', 52, 'n', 3)
 print(v1)
 v2 = Vector()
 print(v2)
